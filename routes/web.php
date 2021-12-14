@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+//主頁
+include_once("layout-index/photoRoute.php");
