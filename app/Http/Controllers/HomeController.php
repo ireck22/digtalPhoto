@@ -13,7 +13,9 @@ class HomeController extends BaseController
 
     public function index()
     {
+        $test=["測試",'asd','asd'];
 
-        return View::make('welcome');
+        return View::make('page.index')
+            ->with('posts',$test);
     }
 }
