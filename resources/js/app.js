@@ -33,6 +33,7 @@ const app = new Vue({
     methods:{
         test:function(){
             console.log("sdasd");
+            alert("sda");
         }
     }
 });

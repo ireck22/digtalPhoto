@@ -12,4 +12,3 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.1/vue.min.js"></script>
 <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
-<script src="{{ mix('/js/app.js') }}"></script>

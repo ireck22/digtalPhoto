@@ -13,19 +13,22 @@
         <header class="row">
             @include('includes.header')
         </header>
-        <div id="app">
-        
+        <div id="app"> 
             <div id="main" class="row">
 
                 @yield('content')
 
             </div>
         </div>
+
         <footer class="row">
             @include('includes.footer')
         </footer>
 
     </div>
+    
+     <!-- 加載js -->
+     <script src="{{ mix('/js/app.js') }}"></script>
 </body>
 
 </html>
