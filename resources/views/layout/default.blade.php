@@ -7,13 +7,14 @@
     @include('includes.heade')
 </head>
 
-<body>
+<body class="bk-set">
     <div class="container">
 
         <header class="row">
             @include('includes.header')
         </header>
         <div id="app"> 
+            <!-- bg-success p-2 text-white bg-opacity-75 -->
             <div id="main" class="row">
 
                 @yield('content')

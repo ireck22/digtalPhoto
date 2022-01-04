@@ -1,6 +1,6 @@
 <div class="navbar">
-    <div class="navbar-inner">
-        <a id="logo" href="/">Single Malt</a>
+    <div class="navbar-inner t1">
+        <a id="logo"  href="/">Single Malt</a>
         <ul class="list-inline">
             <li><a href="/">Home</a></li>
             <li><a href="/about">About</a></li>

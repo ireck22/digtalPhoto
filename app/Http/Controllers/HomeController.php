@@ -13,7 +13,7 @@ class HomeController extends BaseController
 
     public function index()
     {
-        $test=["測試",'asd','asd'];
+        $test=["相簿1",'相簿2','相簿3'];
 
         return View::make('page.index')
             ->with('posts',$test);
