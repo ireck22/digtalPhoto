@@ -10973,3 +10973,7 @@ a.text-dark:focus {
   background-size: 100% 100%;
 }
 
+.carousel .carousel-item {
+  height: 50%;
+}
+
