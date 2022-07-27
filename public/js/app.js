@@ -49796,9 +49796,14 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 var app = new Vue({
   el: '#app',
   methods: {
-    test: function test() {
-      console.log("sdasd");
-      alert("sda");
+    photo_find: function photo_find(query) {
+      console.log("test1");
+      console.log(query); // alert("sda");
+    },
+    back: function back() {
+      console.log("s1");
+      window.history.back();
+      console.log("s2");
     }
   }
 });
