@@ -24,6 +24,37 @@
 .carousel .carousel-item {
     height: 50%;
 }
+ul{
+    list-style: none;
+    // border: 1px solid black;
+
+    width: 350px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* 超過範圍隱藏 */
+    white-space: nowrap; 
+}
+
+ul li{
+    display: inline;
+}
+ul li a {
+    display: inline-block;  /* 水平內顯示為區塊 */
+    border: 2px solid #ccc;
+    padding:0 20px;
+    // color:sienna;
+    text-decoration:none;
+    font-size:24px;
+    line-height:21px;
+}
+
+.upload_main{
+    color:slategray;
+    background-color: rgb(228, 236, 240);
+    margin: auto auto;
+    font-size: 30px;
+}
+
 // .carousel .carousel-item img {
 //     min-height: 300px;
 //     max-height: 300px;

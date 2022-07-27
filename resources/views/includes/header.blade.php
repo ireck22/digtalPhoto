@@ -1,11 +1,10 @@
 <div class="navbar">
     <div class="navbar-inner t1">
-        <a id="logo"  href="/">Single Malt</a>
+        <!-- <a id="logo"  href="/">Single Malt</a> -->
         <ul class="list-inline">
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/projects">Projects</a></li>
-            <li><a href="/contact">Contact</a></li>
+            <li><a class="btn btn-info" href="/photo">首頁</a></li>
+            <li><a class="btn btn-info" href="/photo/upload">圖片上傳</a></li>
+            <li><a class="btn btn-info" href="{{url()->previous()}}">回上一頁</a></li>
         </ul>
     </div>
 </div>

@@ -1,10 +1,10 @@
 @extends('layout.default')
 @section('content')
-<!-- <a href="" @click="test()">test</a> -->
+<!-- <a href="" @click="back()">test</a> -->
 
 @foreach($posts as $row)
 <div class="col-xs-6 col-md-4">
-    <span class="badge badge-secondary sm-2 btn btn-primary btn-lg" @click="test()">
+    <span class="badge badge-secondary sm-2 btn btn-primary btn-lg" @click="photo_find(row)">
         <h1>{{$row}}</h1>
     </span>
 </div>

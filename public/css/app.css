@@ -10977,3 +10977,34 @@ a.text-dark:focus {
   height: 50%;
 }
 
+ul {
+  list-style: none;
+  width: 350px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /* 超過範圍隱藏 */
+  white-space: nowrap;
+}
+
+ul li {
+  display: inline;
+}
+
+ul li a {
+  display: inline-block;
+  /* 水平內顯示為區塊 */
+  border: 2px solid #ccc;
+  padding: 0 20px;
+  text-decoration: none;
+  font-size: 24px;
+  line-height: 21px;
+}
+
+.upload_main {
+  color: slategray;
+  background-color: #e4ecf0;
+  margin: auto auto;
+  font-size: 30px;
+}
+

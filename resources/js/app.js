@@ -31,9 +31,15 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
     methods:{
-        test:function(){
-            console.log("sdasd");
-            alert("sda");
+        photo_find:function(query){
+            console.log("test1");
+            console.log(query);
+            // alert("sda");
+        },
+        back:function(){
+            console.log("s1");
+            window.history.back();
+            console.log("s2");
         }
     }
 });
