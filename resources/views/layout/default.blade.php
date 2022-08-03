@@ -7,8 +7,9 @@
     @include('includes.heade')
 </head>
 
-<body class="bk-set">
-    <div class="container">
+<!-- <body class="bk-set"> -->
+<body>
+    <div class="container all_div">
 
         <header class="row">
             @include('includes.header')

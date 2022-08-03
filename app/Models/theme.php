@@ -17,7 +17,7 @@ class theme extends Model
     {
         $result = theme::where('theme_name', '=', $key_name)
             ->get();
-
+        
         return $result;
     }
 

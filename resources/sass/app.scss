@@ -7,15 +7,19 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-// .t12{
-//     padding: 0px;
-// }
-
 .t1{
     font-size: 30px;
     color: rgb(6, 20, 16);
 }
 .bk-set{
+    background-image: url('https://storage.googleapis.com/smiletaiwan-cms-cwg-tw/article/202101/article-6006b2a795382.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.all_div{
+    width: 100%;
+    height: 100%;
     background-image: url('https://storage.googleapis.com/smiletaiwan-cms-cwg-tw/article/202101/article-6006b2a795382.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -27,7 +31,6 @@
 ul{
     list-style: none;
     // border: 1px solid black;
-
     width: 350px;
     margin: 0;
     padding: 0;
@@ -60,3 +63,8 @@ ul li a {
 //     max-height: 300px;
 //     object-fit: cover;
 // }
+
+.theme_div{
+    text-align: center;
+    // color:aqua;
+}

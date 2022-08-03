@@ -32,9 +32,11 @@ const app = new Vue({
     el: '#app',
     methods:{
         photo_find:function(query){
+            
             console.log("test1");
             console.log(query);
             // alert("sda");
+            $.post();
         },
         back:function(){
             console.log("s1");

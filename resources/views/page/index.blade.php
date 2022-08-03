@@ -3,10 +3,10 @@
 <!-- <a href="" @click="back()">test</a> -->
 
 @foreach($posts as $row)
-<div class="col-xs-6 col-md-4">
-    <span class="badge badge-secondary sm-2 btn btn-primary btn-lg" @click="photo_find(row)">
-        <h1>{{$row}}</h1>
-    </span>
+<div class="col-xs-6 col-md-4 theme_div">
+  <span class="badge badge-secondary sm-2 btn btn-primary btn-lg" @click="photo_find(row)">
+    <h1>{{$row}}</h1>
+  </span>
 </div>
 <!-- <div>&nbsp;&nbsp;</div> -->
 @endforeach
@@ -52,34 +52,31 @@
         </button>
       </div> -->
 
+@if(count($result_one)>0)
+<div class="container">
+  <div class="carousel slide" data-ride="carousel" id="carousel-demo">
+    <ol class="carousel-indicators">
+      @for($i=1; $i<=count($result_one);$i++) 
+        <li data-target="#carousel-demo" data-slide-to="{{$i}}" class="active">{{$i}}</li>
+      @endfor
+    </ol>
+    <div class="carousel-inner">
+      <!-- 這邊會放上面點下相簿撈出來的照片，跑回圈  start-->
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="http://localhost/digtalphoto/storage/app/test1.jpg" alt="First slide">
+        <img class="d-block w-100" src="http://localhost/digtalphoto/storage/app/test2_2.jpg" alt="Second slide">
+        <img class="d-block w-100" src="http://localhost/digtalphoto/storage/app/test7.jpg" alt="Third slide">
+      </div>
+      <!-- 這邊會放上面點下相簿撈出來的照片，跑回圈 end-->
 
-    <div class="container">
-        <div class="carousel slide" data-ride="carousel" id="carousel-demo">
-            <ol class="carousel-indicators">
-                <li data-target="#carousel-demo" data-slide-to="0" class="active"></li>
-                <li data-target="#carousel-demo" data-slide-to="1"></li>
-                <li data-target="#carousel-demo" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <!-- 這邊會放上面點下相簿撈出來的照片，跑回圈  start-->
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="https://www.taiwan.net.tw/att/1/big_scenic_spots/pic_412_8.jpg" alt="">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="http://farm4.staticflickr.com/3795/9269794168_3ac58fc15c_b.jpg" alt="">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="https://www.taiwan.net.tw/att/1/big_scenic_spots/pic_3266_19.jpg" alt="">
-                </div>
-                <!-- 這邊會放上面點下相簿撈出來的照片，跑回圈 end-->
-
-                <a href="#carousel-demo" class="carousel-control-prev" data-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </a>
-                <a href="#carousel-demo" class="carousel-control-next" data-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </a>
-            </div>
-        </div>
+      <a href="#carousel-demo" class="carousel-control-prev" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+      <a href="#carousel-demo" class="carousel-control-next" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </a>
     </div>
+  </div>
+</div>
+@endif
 @stop

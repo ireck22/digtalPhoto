@@ -39,4 +39,34 @@ class PhotoService extends Model
         $result = $theme->insert($data);
         return 1;
     }
+
+    /**
+     * 拿所有的相簿名子，不重複
+     */
+    public function list()
+    {
+        $list = new theme();
+        $result = $list->list();    //拿所有相簿名子
+        $theme_array = [];          //結果陣列初始化
+
+        //去重複的相簿名子
+        foreach ($result as $row) {
+            if (in_array($row['theme_name'], $theme_array)) {
+                continue;
+            } else {
+                $theme_array[] = $row['theme_name'];
+            }
+        }
+        
+        return $theme_array;
+    }
+
+    /**
+     * @param $key 相簿名子
+     */
+    public function find($key){
+        $list = new theme();
+        $result_one = $list->find($key);   //個別相簿的圖片
+        return $result_one;
+    }
 }

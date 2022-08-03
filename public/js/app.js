@@ -49799,6 +49799,8 @@ var app = new Vue({
     photo_find: function photo_find(query) {
       console.log("test1");
       console.log(query); // alert("sda");
+
+      $.post();
     },
     back: function back() {
       console.log("s1");

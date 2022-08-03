@@ -16,14 +16,6 @@ class PhotoController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    // public function index2()
-    // {
-    //     $test=["相簿1",'相簿2','相簿3'];
-
-    //     return View::make('page.index')
-    //         ->with('posts',$test);
-    // }
-
     //呼叫上傳頁面
     public function upload()
     {
@@ -32,25 +24,27 @@ class PhotoController extends BaseController
 
     public function index()
     {
-        $list = new theme();
-        $result = $list->list();
-        $theme_array = [];
-
-        //整理所有的相簿名子
-        foreach ($result as $row) {
-            $theme_array[] = $row['theme_name'];
-        }
+        $result_one = [];
+        $photo_service = new PhotoService();
+        $theme_array = $photo_service->list();  //拿所有相簿名子，有過濾不重複
 
         return View::make('page.index')
-            ->with('posts', $theme_array);
+            ->with('posts', $theme_array)
+            ->with('result_one', $result_one);
     }
 
+    /**
+     * @param $key 相簿名子
+     */
     public function find($key)
     {
-        $list = new theme();
-        $result = $list->find($key);
+
+        $photo_service = new PhotoService();
+        $theme_array = $photo_service->list();     //拿所有相簿名子，有過濾不重複
+        $result_one = $photo_service->find($key);  //個別相簿的所有圖片
         return View::make('page.index')
-            ->with('posts', $result);
+            ->with('posts', $theme_array)
+            ->with('result_one', $result_one);
     }
 
     public function back()
