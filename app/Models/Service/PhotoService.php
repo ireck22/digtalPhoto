@@ -18,11 +18,15 @@ class PhotoService extends Model
             $files = $request->file('image'); // will get all files
             foreach ($files as $file) {
                 $file_name = $file->getClientOriginalName(); //圖片檔名
-                // $file->move(public_path($destinationPath) , $file_name); // move files to destination folder
-                $file->move("C:\\file", $file_name); // move files to destination folder
+                //以下是上傳到網頁資料夾外的
+                // $file->move("C:\\file", $file_name); // move files to destination folder
+
+                //先傳到可以讀到的位置
+                $file->move(public_path("../storage/app"), $file_name); // move files to destination folder
+
             }
 
-            $file_name = "C:\\file\\" . $file_name;       //檔案名子加上路徑
+            // $file_name = "C:\\file\\" . $file_name;       //檔案名子加上路徑，頁面可以讀到後再傳到這裡
             return [
                 "status" => 1,
                 "file_name" => $file_name
@@ -57,14 +61,15 @@ class PhotoService extends Model
                 $theme_array[] = $row['theme_name'];
             }
         }
-        
+
         return $theme_array;
     }
 
     /**
      * @param $key 相簿名子
      */
-    public function find($key){
+    public function find($key)
+    {
         $list = new theme();
         $result_one = $list->find($key);   //個別相簿的圖片
         return $result_one;
