@@ -39,7 +39,8 @@
         @if($row2==0)
           <div class="carousel-item active">
             <img class="d-block w-100" src="http://localhost/digtalphoto/storage/app/{{$value['file_name']}}" alt="">
-          </div>
+          </div> 
+          @continue
         @endif
         <div class="carousel-item">
           <img class="d-block w-100" src="http://localhost/digtalphoto/storage/app/{{$value['file_name']}}" alt="">
