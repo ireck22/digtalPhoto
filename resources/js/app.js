@@ -30,13 +30,21 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 
 const app = new Vue({
     el: '#app',
+    data(){
+        return {
+            info: null
+        }
+    },
     methods:{
         photo_find:function(query){
+            var key="test1"
+            console.log(key);
             
-            console.log("test1");
-            console.log(query);
-            // alert("sda");
-            $.post();
+            axios
+            .get("http://digtalphoto.test/photo/find/"+key)
+            .then(response => (this.info = response))
+            console.log(this.info);
+            return this.info
         },
         back:function(){
             console.log("s1");

@@ -49795,12 +49795,22 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 
 var app = new Vue({
   el: '#app',
+  data: function data() {
+    return {
+      info: null
+    };
+  },
   methods: {
     photo_find: function photo_find(query) {
-      console.log("test1");
-      console.log(query); // alert("sda");
+      var _this = this;
 
-      $.post();
+      var key = "test1";
+      console.log(key);
+      axios.get("http://digtalphoto.test/photo/find/" + key).then(function (response) {
+        return _this.info = response;
+      });
+      console.log(this.info);
+      return this.info;
     },
     back: function back() {
       console.log("s1");
