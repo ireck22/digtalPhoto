@@ -21,12 +21,11 @@ class theme extends Model
         return $result;
     }
 
-    public function insert($data)
+    public function insert($theme_name,$file_data)
     {
-        file_put_contents("test33.txt","23124".PHP_EOL,FILE_APPEND);
         $theme_db = new theme;
-        $theme_db->theme_name = $data['theme_name'];
-        $theme_db->file_name = $data['file_name'];
+        $theme_db->theme_name = $theme_name;
+        $theme_db->file_name = $file_data;
         $theme_db->save();
         return 1;
     }

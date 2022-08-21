@@ -16,20 +16,21 @@ class PhotoService extends Model
         if ($request->hasFile('image')) {
             $destinationPath = 'upload';
             $files = $request->file('image'); // will get all files
+            $files2=[];                       //存所有的圖片檔案名子
             foreach ($files as $file) {
                 $file_name = $file->getClientOriginalName(); //圖片檔名
                 //以下是上傳到網頁資料夾外的
                 // $file->move("C:\\file", $file_name); // move files to destination folder
-
+                //end
+                // file_put_contents("test22.txt",$file_name.PHP_EOL,FILE_APPEND); //除錯用
                 //先傳到可以讀到的位置
                 $file->move(public_path("../storage/app"), $file_name); // move files to destination folder
-
+                $files2[]=$file_name;
             }
 
-            // $file_name = "C:\\file\\" . $file_name;       //檔案名子加上路徑，頁面可以讀到後再傳到這裡
             return [
                 "status" => 1,
-                "file_name" => $file_name
+                "file_name" => $files2
             ];
         } else {
             return 0;
@@ -38,9 +39,12 @@ class PhotoService extends Model
 
     public function insert_db($data)
     {
+        $theme_name=$data['theme_name'];      //相簿名子
         $theme = new theme;
-        file_put_contents("test33.txt", "22" . PHP_EOL, FILE_APPEND);
-        $result = $theme->insert($data);
+        foreach ($data['file_name'] as $key) {
+            $result = $theme->insert($theme_name,$key);
+        }
+
         return 1;
     }
 
