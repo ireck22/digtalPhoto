@@ -65,7 +65,6 @@ class PhotoService extends Model
                 $theme_array[] = $row['theme_name'];
             }
         }
-
         return $theme_array;
     }
 

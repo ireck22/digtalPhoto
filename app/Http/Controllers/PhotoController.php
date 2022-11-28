@@ -42,13 +42,10 @@ class PhotoController extends BaseController
         $photo_service = new PhotoService();
         $theme_array = $photo_service->list();     //拿所有相簿名子，有過濾不重複
         $result_one = $photo_service->find($key);  //個別相簿的所有圖片
-        // return [
-        //     "theme_name" => $theme_array,
-        //     "result_one" => $result_one
-        // ];
+       
         return View::make('page.index')
-        ->with('posts', $theme_array)
-        ->with('result_one', $result_one);
+            ->with('posts', $theme_array)
+            ->with('result_one', $result_one);
     }
 
     public function back()
