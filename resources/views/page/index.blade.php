@@ -32,7 +32,7 @@
       <!-- text-center -->
       <!-- 這邊會放上面點下相簿撈出來的照片，跑回圈  start-->
         @foreach($result_one as $row2=>$value)
-            <img class="w-25 rounded float" src="http://localhost/digtalphoto/storage/app/{{$value['file_name']}}" alt="">
+            <img class="w-25" src="http://localhost/digtalphoto/storage/app/{{$value['file_name']}}" alt="">
         @endforeach
       <!-- 這邊會放上面點下相簿撈出來的照片，跑回圈 end-->
       </div>
