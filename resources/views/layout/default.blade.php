@@ -9,7 +9,7 @@
 
 <!-- <body class="bk-set"> -->
 <body>
-    <div class="container all_div">
+    <div class="all_div">
 
         <header class="row">
             @include('includes.header')
