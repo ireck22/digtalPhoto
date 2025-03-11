@@ -19,11 +19,10 @@ class PhotoService extends Model
             $files2=[];                       //存所有的圖片檔案名子
             foreach ($files as $file) {
                 $file_name = $file->getClientOriginalName(); //圖片檔名
-                //以下是上傳到網頁資料夾外的
-                // $file->move("C:\\file", $file_name); // move files to destination folder
-                //end
-                // file_put_contents("test22.txt",$file_name.PHP_EOL,FILE_APPEND); //除錯用
-                //先傳到可以讀到的位置
+                $extension=$file->getClientOriginalExtension();
+                if($extension=='mp4'){
+                    return 0;
+                }
                 $file->move(public_path("../storage/app"), $file_name); // move files to destination folder
                 $files2[]=$file_name;
             }

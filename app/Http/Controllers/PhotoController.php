@@ -60,6 +60,7 @@ class PhotoController extends BaseController
         $photoService = new PhotoService;
         $import_file = $photoService->import_file($request);
         if (empty($import_file)) {              //沒有上傳檔案跑這裡
+            echo "<script>alert('上傳的檔案有錯')</script>";
             return View::make('page.upload');   //回上傳頁面
         }
         //--------------處理圖片上傳到隨身碟 end-------------------------
